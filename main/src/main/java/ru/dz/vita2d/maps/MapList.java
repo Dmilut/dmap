@@ -1,14 +1,8 @@
 package ru.dz.vita2d.maps;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.URL;
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 
 import org.json.JSONArray;
@@ -16,12 +10,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
-import application.Defs;
-import application.IMapScene;
-import application.MapScene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
-import ru.dz.vita2d.data.RestCaller;
+import ru.dz.vita2d.application.Defs;
+import ru.dz.vita2d.application.IMapScene;
 
 /**
  * List of all maps - loaded from JSON file

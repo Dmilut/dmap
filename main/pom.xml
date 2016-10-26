@@ -5,6 +5,16 @@
 	<artifactId>DZ_VitaSoft_2D</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20160810</version>
+		</dependency>
+
+	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -22,7 +32,7 @@
 				<version>8.7.0</version>
 				<configuration>
 					<vendor>YourCompany</vendor>
-					<mainClass>com.dmilut.MainDemo</mainClass>
+					<mainClass>ru.dz.vita2d.application.Main</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>

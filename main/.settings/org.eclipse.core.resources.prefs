@@ -1,3 +1,2 @@
 eclipse.preferences.version=1
-encoding//resources/maps.json=UTF-8
-encoding/<project>=UTF-8
+encoding//src/main/resources/ru/dz/vita2d/json/maps.json=UTF-8
