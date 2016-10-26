@@ -7,6 +7,8 @@ Example application demonstrating integration of JavaFX and Spring technologies 
 
 To build and run this project used JavaFX Maven Plugin https://github.com/javafx-maven-plugin/javafx-maven-plugin
 
+To create your executable file, call `mvn jfx:jar`. The jar-file will be placed at `target/jfx/app`.
+
 ### Run
 
-To create your executable file, call `mvn jfx:jar`. The jar-file will be placed at `target/jfx/app`.
+To run your executable file, call `mvn jfx:run`.
