@@ -5,15 +5,16 @@ import java.io.InputStreamReader;
 import java.util.Optional;
 import java.util.Properties;
 
-// http://sv-web-15.vtsft.ru/orvd-release/index/#
-// http://sv-web-15.vtsft.ru/orvd-test/index/#
-
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import ru.dz.vita2d.data.IRestCaller;
 import ru.dz.vita2d.data.RestCaller;
 import ru.dz.vita2d.data.ServerCache;
@@ -23,6 +24,9 @@ import ru.dz.vita2d.media.Player;
 import ru.dz.vita2d.ui.LoginFormWindow;
 
 public class Main extends Application {
+
+	private static final String SPLASHLOCATION = "/ru/dz/vita2d/views/splash.fxml";
+	
 
 	private Stage primaryStage;
 
@@ -35,6 +39,19 @@ public class Main extends Application {
 	public LocalFileStorage store = new LocalFileStorage();
 
 	@Override
+	public void start(Stage stage) throws Exception {
+		Parent root = FXMLLoader.load(getClass().getResource(SPLASHLOCATION));
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.initStyle(StageStyle.UNDECORATED);
+		stage.show();
+	}
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+
+	/*@Override
 	public void init() throws Exception {
 		super.init();
 
@@ -120,6 +137,6 @@ public class Main extends Application {
 		}
 
 		Platform.exit();
-	}
+	}*/
 
 }

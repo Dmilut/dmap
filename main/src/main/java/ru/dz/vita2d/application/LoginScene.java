@@ -31,7 +31,7 @@ public class LoginScene {
 	private Main main;
 	private Label message;
 
-	public LoginScene(IRestCaller rc, Stage primaryStage, Main main) {
+/*	public LoginScene(IRestCaller rc, Stage primaryStage, Main main) {
 		this.rc = rc;
 		this.main = main;
 		HBox buttons = createButtons();
@@ -118,6 +118,6 @@ public class LoginScene {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 }
