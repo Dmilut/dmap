@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 public class BackgroundScene {
 	public BackgroundScene(Stage primaryStage) {
 
-		Image bg = new Image("background.png");
+		Image bg = new Image("/ru/dz/vita2d/img/background.png");
 		ImageView bgView = new ImageView(bg);
 
 		BorderPane borderPane = new BorderPane();
