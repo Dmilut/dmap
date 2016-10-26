@@ -65,14 +65,14 @@ public abstract class AbstractMapScene implements IMapScene {
 		// File menu - new, save, exit
 		Menu fileMenu = new Menu("Файл");
 
-		MenuItem loginMenuItem = new MenuItem("Сменить пользователя");
+		/*MenuItem loginMenuItem = new MenuItem("Сменить пользователя");
 		loginMenuItem.setOnAction(actionEvent -> main.logout());
 
 		MenuItem exitMenuItem = new MenuItem("Выход (выключить планшет)");
 		exitMenuItem.setOnAction(actionEvent -> main.requestShutdown());
-		exitMenuItem.setAccelerator(KeyCombination.keyCombination("Alt+F4"));
+		exitMenuItem.setAccelerator(KeyCombination.keyCombination("Alt+F4"));*/
 
-		fileMenu.getItems().addAll(loginMenuItem, new SeparatorMenuItem(), exitMenuItem);
+		/*fileMenu.getItems().addAll(loginMenuItem, new SeparatorMenuItem(), exitMenuItem);*/
 
 		Menu navMenu = new Menu("Навигация");
 

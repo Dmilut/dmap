@@ -14,7 +14,7 @@ http://www.springframework.org/schema/data/jpa
 http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
 	<!-- Scans for components that will be auto-registered as Spring beans -->
-	<context:component-scan base-package="com.dmilut" />
+	<context:component-scan base-package="ru.dz.vita2d" />
 	<!-- Scans for repositories that will be auto-registered -->
 	<jpa:repositories base-package="com.dmilut.repository" />
 	<!-- Activates various annotations to be detected in bean classes e.g: @Autowired -->
