@@ -3,7 +3,7 @@ package ru.dz.vita2d.maps;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import ru.dz.vita2d.data.UnitRef;
-import ru.dz.vita2d.ui.anim.SpriteAnimation;
+import ru.dz.vita2d.ui.animation.SpriteAnimation;
 
 /**
  * Overlay (icon, on top image) to be put on map. Displayed and clickable.

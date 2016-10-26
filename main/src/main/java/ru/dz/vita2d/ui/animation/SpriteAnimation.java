@@ -1,4 +1,4 @@
-package ru.dz.vita2d.ui.anim;
+package ru.dz.vita2d.ui.animation;
 
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;

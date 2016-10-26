@@ -4,7 +4,7 @@ import org.json.JSONObject;
 
 import javafx.util.Duration;
 import ru.dz.vita2d.data.UnitRef;
-import ru.dz.vita2d.ui.anim.SpriteAnimation;
+import ru.dz.vita2d.ui.animation.SpriteAnimation;
 
 /**
  * Tile (Overlay) definition as loaded from JSON file. 

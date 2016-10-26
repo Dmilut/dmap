@@ -8,7 +8,7 @@ import javafx.scene.SnapshotParameters;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
-import ru.dz.vita2d.ui.anim.SpriteAnimation;
+import ru.dz.vita2d.ui.animation.SpriteAnimation;
 
 /**
  * Abstract implementation of map data - class that keeps internal representation
