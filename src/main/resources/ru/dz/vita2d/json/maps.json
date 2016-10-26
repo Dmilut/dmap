@@ -1,0 +1,80 @@
+{
+	"main-id":"main",
+	"maps":[
+		{
+			"name":"Главная карта",
+			"id":"main",
+			"file":"/ru/dz/vita2d/img/map.png",
+			"attrs":{
+				"type":"outdoor",
+				"entity":"notifications"
+			},
+			"tiles":[
+				{
+				"name":"Локатор ОРЛ-А",
+				"file":"/ru/dz/vita2d/img/orl-a-icon.png",
+				"x":926, "y":1205,
+				"link-id":"orla",
+				"ref-unit-type":"obj", "ref-unit-id":2042563
+				},
+				{
+				"name":"Локатор ОРЛ-Т",
+				"file":"/ru/dz/vita2d/img/orl-t-icon.png",
+				"x":1143, "y":1050,
+				"link-id":"orla",
+				"ref-unit-type":"obj", "ref-unit-id":2046116
+				},
+				{
+				"name":"Вышка АКДП",
+				"file":"/ru/dz/vita2d/img/akdp-icon.png",
+				"x":995, "y":499,
+				"link-id":"orla"
+				},
+				{
+				"name":"ДПРМ28Л",
+				"file":"/ru/dz/vita2d/img/dprm28l-icon.png",
+				"x":1572, "y":874,
+				"link-id":"orla",
+				"ref-unit-type":"obj", "ref-unit-id":2047461
+				},
+			]
+		},
+		{
+			"name":"Локатор ОРЛ-А",
+			"id":"orla",
+			"file":"/ru/dz/vita2d/img/orl_a_map.png",
+			"attrs":{
+				"type":"outdoor",
+				"entity":"notifications"
+			},
+			"tiles":[
+				{
+				"name":"Локатор ОРЛ-А",
+				"file":"/ru/dz/vita2d/img/orl-a-icon.png",
+				"x":725, "y":190,
+				"link-id":"orla",
+				"anim-file-base":"/ru/dz/vita2d/img/orl-anim/locator_%05d.png",
+				"anim-file-count":16
+				}
+			]
+		},
+		{
+			"name":"Локатор ОРЛ-А, главное здание",
+			"id":"orla-build1",
+			"file":"/ru/dz/vita2d/img/plan.png",
+			"attrs":{
+				"type":"indoor",
+				"entity":"notifications"
+			}
+		},
+		{
+			"name":"Щиток",
+			"id":"orla-build1-dev1",
+			"file":"/ru/dz/vita2d/img/device_00.png",
+			"attrs":{
+				"type":"device",
+				"entity":"notifications"
+			}
+		}
+	]
+}
