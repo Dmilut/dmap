@@ -21,9 +21,9 @@ import ru.dz.vita2d.maps.MapOverlay;
 import ru.dz.vita2d.ui.EntityFormView;
 import ru.dz.vita2d.ui.EntityListWindow;
 
-public abstract class AbstractMapScene implements IMapScene {
+public /*abstract */class AbstractMapScene /*implements IMapScene */{
 
-	protected static double clamp(double value, double min, double max) {
+	/*protected static double clamp(double value, double min, double max) {
 		if (value < min)
 			return min;
 		if (value > max)
@@ -65,14 +65,14 @@ public abstract class AbstractMapScene implements IMapScene {
 		// File menu - new, save, exit
 		Menu fileMenu = new Menu("Файл");
 
-		/*MenuItem loginMenuItem = new MenuItem("Сменить пользователя");
+		MenuItem loginMenuItem = new MenuItem("Сменить пользователя");
 		loginMenuItem.setOnAction(actionEvent -> main.logout());
 
 		MenuItem exitMenuItem = new MenuItem("Выход (выключить планшет)");
 		exitMenuItem.setOnAction(actionEvent -> main.requestShutdown());
-		exitMenuItem.setAccelerator(KeyCombination.keyCombination("Alt+F4"));*/
+		exitMenuItem.setAccelerator(KeyCombination.keyCombination("Alt+F4"));
 
-		/*fileMenu.getItems().addAll(loginMenuItem, new SeparatorMenuItem(), exitMenuItem);*/
+		fileMenu.getItems().addAll(loginMenuItem, new SeparatorMenuItem(), exitMenuItem);
 
 		Menu navMenu = new Menu("Навигация");
 
@@ -102,7 +102,7 @@ public abstract class AbstractMapScene implements IMapScene {
 		// MenuItem d1 = new MenuItem("На общую карту");
 		// d1.setOnAction(actionEvent -> setMapData(main.ml.getRootMap()));
 
-		/*
+		
 		 * Menu webMenu = new Menu("Web"); CheckMenuItem htmlMenuItem = new
 		 * CheckMenuItem("HTML"); htmlMenuItem.setSelected(true);
 		 * webMenu.getItems().add(htmlMenuItem);
@@ -125,7 +125,7 @@ public abstract class AbstractMapScene implements IMapScene {
 		 * CheckMenuItem("JavaFX"), new CheckMenuItem("Swing"));
 		 * 
 		 * sqlMenu.getItems().add(tutorialManeu);
-		 */
+		 
 
 		Menu aboutMenu = new Menu("О системе");
 
@@ -179,6 +179,6 @@ public abstract class AbstractMapScene implements IMapScene {
 
 		}
 
-	}
+	}*/
 
 }

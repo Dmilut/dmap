@@ -22,9 +22,9 @@ import javafx.stage.Stage;
 import ru.dz.vita2d.maps.IMapData;
 import ru.dz.vita2d.maps.MapOverlay;
 
-public class NewMapScene extends AbstractMapScene {
+public class NewMapScene /*extends AbstractMapScene*/ {
 
-	private static final int MIN_PIXELS = 10;
+	/*private static final int MIN_PIXELS = 10;
 
 	private IMapData mData; // = bigMapData;
 
@@ -43,12 +43,12 @@ public class NewMapScene extends AbstractMapScene {
 		reset(imagePane, width, height);
 	}
 
-	/*
+	
 	 * // reset to the top left: private void reset(ImageView imageView, double
 	 * width, double height) { //imageView.setViewport(new Rectangle2D(0, 0,
 	 * width, height)); imagePane.setViewportBounds(new BoundingBox(0, 0, width,
 	 * height)); }
-	 */
+	 
 	private void reset(ScrollPane imageView, double width, double height) {
 		// imageView.setViewport(new Rectangle2D(0, 0, width, height));
 		imageView.setViewportBounds(new BoundingBox(0, 0, width, height));
@@ -147,7 +147,7 @@ public class NewMapScene extends AbstractMapScene {
 			}
 		});
 
-		/*
+		
 		 * ObjectProperty<Point2D> mouseDown = new SimpleObjectProperty<>();
 		 * imageView.setOnMousePressed(e -> { Point2D mousePress =
 		 * imageViewToImage(imageView, new Point2D(e.getX(), e.getY()));
@@ -160,11 +160,11 @@ public class NewMapScene extends AbstractMapScene {
 		 * dragPoint.subtract(mouseDown.get()));
 		 * mouseDown.set(imageViewToImage(imageView, new Point2D(e.getX(),
 		 * e.getY()))); });
-		 */
+		 
 
-		/*
+		
 		 * imageView.setOnScroll(e -> { setZoom(e); });
-		 */
+		 
 
 		imageView.setOnMouseClicked(e -> {
 			if (e.getClickCount() == 2) {
@@ -249,7 +249,7 @@ public class NewMapScene extends AbstractMapScene {
 		imagePane.setViewportBounds(new BoundingBox(newMinX, newMinY, newWidth, newHeight));
 	}
 
-	/*
+	
 	 * // shift the viewport of the imageView by the specified delta, clamping
 	 * so // the viewport does not move off the actual image: private static
 	 * void shift(ImageView imageView, Point2D delta) { Rectangle2D viewport =
@@ -266,8 +266,8 @@ public class NewMapScene extends AbstractMapScene {
 	 * 
 	 * imageView.setViewport(new Rectangle2D(minX, minY, viewport.getWidth(),
 	 * viewport.getHeight())); }
-	 */
-	/*
+	 
+	
 	 * unused private void shift(ScrollPane imageView, Point2D delta) { Bounds
 	 * viewport = imageView.getViewportBounds();
 	 * 
@@ -283,9 +283,9 @@ public class NewMapScene extends AbstractMapScene {
 	 * //imageView.setViewport(new Rectangle2D(minX, minY, viewport.getWidth(),
 	 * viewport.getHeight())); imageView.setViewportBounds(new BoundingBox(minX,
 	 * minY, viewport.getWidth(), viewport.getHeight())); }
-	 */
+	 
 
-	/*
+	
 	 * // convert mouse coordinates in the imageView to coordinates in the
 	 * actual image: private static Point2D imageViewToImage(ImageView
 	 * imageView, Point2D imageViewCoordinates) { double xProportion =
@@ -296,7 +296,7 @@ public class NewMapScene extends AbstractMapScene {
 	 * Rectangle2D viewport = imageView.getViewport(); return new Point2D(
 	 * viewport.getMinX() + xProportion * viewport.getWidth(),
 	 * viewport.getMinY() + yProportion * viewport.getHeight()); }
-	 */
+	 
 	private Point2D imageViewToImage(ScrollPane imageView, Point2D imageViewCoordinates) {
 		// System.out.println("in "+imageViewCoordinates);
 		Bounds viewport = imageView.getViewportBounds();
@@ -305,7 +305,7 @@ public class NewMapScene extends AbstractMapScene {
 				imageViewCoordinates.getY() - viewport.getMinY());
 		// System.out.println("out "+out);
 		return out;
-		/*
+		
 		 * double xProportion = imageViewCoordinates.getX() /
 		 * imageView.getBoundsInLocal().getWidth(); double yProportion =
 		 * imageViewCoordinates.getY() /
@@ -315,7 +315,7 @@ public class NewMapScene extends AbstractMapScene {
 		 * imageView.getViewportBounds(); return new Point2D( viewport.getMinX()
 		 * + xProportion * viewport.getWidth(), viewport.getMinY() + yProportion
 		 * * viewport.getHeight());
-		 */
+		 
 	}
-
+*/
 }

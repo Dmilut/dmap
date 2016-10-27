@@ -18,9 +18,9 @@ import javafx.stage.Stage;
 import ru.dz.vita2d.maps.IMapData;
 import ru.dz.vita2d.maps.MapOverlay;
 
-public class MapScene extends AbstractMapScene {
+public class MapScene /*extends AbstractMapScene*/ {
 
-	private static final int MIN_PIXELS = 10;
+	/*private static final int MIN_PIXELS = 10;
 
 	private IMapData mData; // = bigMapData;
 
@@ -210,6 +210,6 @@ public class MapScene extends AbstractMapScene {
 		Rectangle2D viewport = imageView.getViewport();
 		return new Point2D(viewport.getMinX() + xProportion * viewport.getWidth(),
 				viewport.getMinY() + yProportion * viewport.getHeight());
-	}
+	}*/
 
 }
