@@ -53,7 +53,7 @@ public class LoginController implements Initializable {
 	public Properties property = new Properties();
 	public LocalFileStorage store = new LocalFileStorage();
 
-	// private final String STAGELOCATION = "/com/dmilut/views/main.fxml";
+	private final String STAGELOCATION = "/ru/dz/vita2d/views/main.fxml";
 	private final String STAGETITLE = "Sample App";
 	private final boolean ISRESIZE = true;
 	private final boolean ISMAXIMIZED = false;
@@ -82,9 +82,9 @@ public class LoginController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		Platform.runLater(() -> {
 			new FadeInLeftTransition(labelWelcome).play();
-			new FadeInRightTransition(labelUserLogin).play();			
+			new FadeInRightTransition(labelUserLogin).play();
 			new FadeInLeftTransition1(labelUsername).play();
-			new FadeInLeftTransition1(labelPassword).play();			
+			new FadeInLeftTransition1(labelPassword).play();
 			new FadeInLeftTransition1(textUsername).play();
 			new FadeInLeftTransition1(textPassword).play();
 			new FadeInRightTransition(buttonLogin).play();
@@ -100,11 +100,9 @@ public class LoginController implements Initializable {
 	@FXML
 	private void login(ActionEvent event) {
 		if (textUsername.getText().equals("1") && textPassword.getText().equals("1")) {
-			System.out.println("Nice!!!");
-
-			// stageInitializer.initStage(lblClose, STAGELOCATION, STAGETITLE,
-			// ISRESIZE, StageStyle.DECORATED,
-			// ISMAXIMIZED);
+			
+			stageInitializer.initStage(labelClose, STAGELOCATION, STAGETITLE, ISRESIZE, StageStyle.DECORATED,
+					ISMAXIMIZED);
 
 		} else {
 			StageInitializer.dialog(Alert.AlertType.ERROR, "Error Login, Please Chek Username And Password");
