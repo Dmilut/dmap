@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import java.lang.String?>
+<?import com.jfoenix.controls.JFXListView?>
+
+
+<StackPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="ru.dz.vita2d.ui.controller.SideMenuController">
+
+	<styleClass>
+		<String fx:value="side-menu" />
+	</styleClass>
+	<JFXListView fx:id="sideList">
+		<Label fx:id="button"> Test </Label>
+
+	</JFXListView>
+</StackPane>

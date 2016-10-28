@@ -1,5 +1,6 @@
 package ru.dz.vita2d.ui.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -15,16 +16,21 @@ import com.jfoenix.svg.SVGGlyphLoader;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 @Controller
 public class MainController implements Initializable {
-	private static final String FONTS_ICOMOON_SVG = "/ru/dz/vita2dfonts/icomoon.svg";
-
+	private static final int MINHEIGHT = 768;
+	private static final int MINWIDTH = 1024;
+	private static final String SIDEMENULOCATION = "/ru/dz/vita2d/views/sideMenu.fxml";
+	private static final String ICOMOONFONTLOCATION = "/ru/dz/vita2dfonts/icomoon.svg";
 	private Stage stage;
+	StackPane stackPane = null;
 
 	@FXML
 	private StackPane root;
@@ -48,13 +54,12 @@ public class MainController implements Initializable {
 
 		Platform.runLater(() -> {
 			stage = (Stage) root.getScene().getWindow();
-			stage.setMinWidth(800);
-			stage.setMinHeight(600);
-
-			//scene = stage.getScene();
+			stage.setMinWidth(MINWIDTH);
+			stage.setMinHeight(MINHEIGHT);
 
 		});
-		// init the title hamburger icon
+		
+		// init the title hamburger
 		drawer.setOnDrawerOpening((handler) -> {
 			titleBurger.getAnimation().setRate(1);
 			titleBurger.getAnimation().play();
@@ -71,6 +76,16 @@ public class MainController implements Initializable {
 			else
 				drawer.close();
 		});
+		
+		// init the side menu
+		try {
+			stackPane = FXMLLoader.load(getClass().getResource(SIDEMENULOCATION));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		drawer.setSidePane(stackPane);
 
 		// init Popup
 		toolbarPopup.setPopupContainer(root);
@@ -85,13 +100,13 @@ public class MainController implements Initializable {
 		exit.setOnMouseClicked((handler) -> {
 			Platform.exit();
 		});
-		// });
+
 	}
 
 	private void loadSVG() {
 		new Thread(() -> {
 			try {
-				SVGGlyphLoader.loadGlyphsFont(MainController.class.getResourceAsStream(FONTS_ICOMOON_SVG),
+				SVGGlyphLoader.loadGlyphsFont(MainController.class.getResourceAsStream(ICOMOONFONTLOCATION),
 						"icomoon.svg");
 				System.out.println("loadGlyphsFont true !!!!");
 			} catch (Exception e) {
