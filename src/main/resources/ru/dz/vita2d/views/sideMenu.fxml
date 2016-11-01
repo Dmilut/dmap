@@ -17,6 +17,7 @@
 	</styleClass>
 	<JFXListView fx:id="sideList">
 		<Label fx:id="button"> Test </Label>
-
 	</JFXListView>
+	
+	
 </StackPane>

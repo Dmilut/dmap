@@ -15,25 +15,41 @@ import com.jfoenix.controls.JFXRippler;
 import com.jfoenix.svg.SVGGlyphLoader;
 
 import javafx.application.Platform;
+import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 @Controller
 public class MainController implements Initializable {
-	private static final int MINHEIGHT = 768;
 	private static final int MINWIDTH = 1024;
+	private static final int MINHEIGHT = 768;
 	private static final String SIDEMENULOCATION = "/ru/dz/vita2d/views/sideMenu.fxml";
+	private static final String CONTENTLOCATION = "/ru/dz/vita2d/views/content.fxml";
 	private static final String ICOMOONFONTLOCATION = "/ru/dz/vita2dfonts/icomoon.svg";
 	private Stage stage;
 	StackPane stackPane = null;
+	AnchorPane contentArea = null;
 
 	@FXML
-	private StackPane root;
+	private AnchorPane root;
+	@FXML
+	private StackPane menu;
 	@FXML
 	private StackPane titleBurgerContainer;
 	@FXML
@@ -56,9 +72,9 @@ public class MainController implements Initializable {
 			stage = (Stage) root.getScene().getWindow();
 			stage.setMinWidth(MINWIDTH);
 			stage.setMinHeight(MINHEIGHT);
-
-		});
 		
+		});
+
 		// init the title hamburger
 		drawer.setOnDrawerOpening((handler) -> {
 			titleBurger.getAnimation().setRate(1);
@@ -76,7 +92,7 @@ public class MainController implements Initializable {
 			else
 				drawer.close();
 		});
-		
+
 		// init the side menu
 		try {
 			stackPane = FXMLLoader.load(getClass().getResource(SIDEMENULOCATION));
@@ -88,13 +104,24 @@ public class MainController implements Initializable {
 		drawer.setSidePane(stackPane);
 
 		// init Popup
-		toolbarPopup.setPopupContainer(root);
+		toolbarPopup.setPopupContainer(menu);
 		toolbarPopup.setSource(optionsRippler);
-		root.getChildren().remove(toolbarPopup);
+		menu.getChildren().remove(toolbarPopup);
 
 		optionsBurger.setOnMouseClicked((handler) -> {
 			toolbarPopup.show(PopupVPosition.TOP, PopupHPosition.RIGHT, -12, 15);
 		});
+
+		
+		// init content Area
+		try {
+			contentArea = FXMLLoader.load(getClass().getResource(CONTENTLOCATION));			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		root.getChildren().add(contentArea);
+		
 
 		// close application
 		exit.setOnMouseClicked((handler) -> {
