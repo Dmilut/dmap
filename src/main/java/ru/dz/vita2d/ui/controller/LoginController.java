@@ -49,7 +49,7 @@ import ru.dz.vita2d.ui.animation.FadeInRightTransition;
  * @author dmilut
  */
 
-@Controller
+//@Controller
 public class LoginController implements Initializable {
 	private Stage primaryStage;
 	public IRestCaller rc;
@@ -83,10 +83,10 @@ public class LoginController implements Initializable {
 	@FXML
 	private Label labelClose;
 	
-	@Autowired
+/*	@Autowired
 	UserService UserService;
 	@Autowired
-	RoleRepository roleRepository;
+	RoleRepository roleRepository;*/
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -114,7 +114,7 @@ public class LoginController implements Initializable {
 	@FXML
 	private void login(ActionEvent event) {
 		
-		String name = textUsername.getText();
+	/*	String name = textUsername.getText();
 		User user = UserService.getUserByName(name);
 		//String password = textPassword.getText();
 		
@@ -126,7 +126,7 @@ public class LoginController implements Initializable {
 
 		} else {
 			StageInitializer.dialog(Alert.AlertType.ERROR, "Error Login, Please Chek Username And Password");
-		}
+		}*/
 	}
 
 	/*

@@ -18,7 +18,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.StageStyle;
-import ru.dz.vita2d.init.SpringContextInitializer;
+
 import ru.dz.vita2d.init.StageInitializer;
 import ru.dz.vita2d.ui.animation.FadeInLeftTransition;
 import ru.dz.vita2d.ui.animation.FadeInRightTransition;
@@ -51,7 +51,7 @@ public class SplashController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
-		startApplication();
+	//	startApplication();
 
 		labelClose.setOnMouseClicked((MouseEvent event) -> {
 			Platform.exit();
@@ -59,7 +59,7 @@ public class SplashController implements Initializable {
 		});
 	}
 
-	private void startApplication() {
+	/*private void startApplication() {
 		Service<ApplicationContext> service = initApplicationContext();
 
 		service.start();
@@ -99,6 +99,6 @@ public class SplashController implements Initializable {
 		};
 
 		return service;
-	}
+	}*/
 
 }

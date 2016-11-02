@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 
 import com.jfoenix.controls.JFXDrawer;
@@ -23,8 +24,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-@Controller
-public class MainController implements Initializable {
+@Component
+public class MainController extends AbstractController {
 	private static final int MINWIDTH = 1024;
 	private static final int MINHEIGHT = 768;
 	private static final String SIDEMENULOCATION = "/ru/dz/vita2d/views/sideMenu.fxml";
@@ -59,7 +60,7 @@ public class MainController implements Initializable {
 		Platform.runLater(() -> {
 			stage = (Stage) root.getScene().getWindow();
 			stage.setMinWidth(MINWIDTH);
-			stage.setMinHeight(MINHEIGHT);		
+			stage.setMinHeight(MINHEIGHT);
 		});
 
 		// init the title hamburger
@@ -98,16 +99,15 @@ public class MainController implements Initializable {
 		optionsBurger.setOnMouseClicked((handler) -> {
 			toolbarPopup.show(PopupVPosition.TOP, PopupHPosition.RIGHT, -12, 15);
 		});
-		
+
 		// init content Area
 		try {
-			contentArea = FXMLLoader.load(getClass().getResource(CONTENTLOCATION));			
+			contentArea = FXMLLoader.load(getClass().getResource(CONTENTLOCATION));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 		root.getChildren().add(contentArea);
-		
 
 		// close application
 		exit.setOnMouseClicked((handler) -> {
@@ -116,19 +116,14 @@ public class MainController implements Initializable {
 
 	}
 
-	private void loadSVG() {
-		new Thread(() -> {
-			try {
-				SVGGlyphLoader.loadGlyphsFont(MainController.class.getResourceAsStream(ICOMOONFONTLOCATION),
-						"icomoon.svg");
-				System.out.println("loadGlyphsFont true !!!!");
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-
-				System.out.println("loadGlyphsFont false !!!!");
-				e.printStackTrace();
-			}
-		}).start();
+	public void setStage(Stage stage) {
+		this.stage = stage;
 	}
+
+	public Stage getStage() {
+		return stage;
+	}
+
+	
 
 }

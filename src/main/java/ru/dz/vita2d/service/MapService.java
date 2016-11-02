@@ -11,7 +11,7 @@ import ru.dz.vita2d.model.Map;
  * @author dmilut created on Nov 1, 2016
  */
 
-@Service
+//@Service
 public class MapService {
 
 	public Map getMap() {

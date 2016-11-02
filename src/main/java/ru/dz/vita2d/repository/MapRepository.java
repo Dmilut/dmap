@@ -12,7 +12,7 @@ import ru.dz.vita2d.model.Map;
  * @author dmilut created on Nov 2, 2016
  */
 
-@Repository
+//@Repository
 public interface MapRepository extends JpaRepository<Map, Long> {
 
 }
