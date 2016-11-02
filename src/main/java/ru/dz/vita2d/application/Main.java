@@ -11,6 +11,8 @@ import ru.dz.vita2d.ui.controller.MainController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.jfoenix.controls.JFXDecorator;
+
 public class Main extends Application {
 	private static final String MAINLOCATION = "/ru/dz/vita2d/views/main.fxml";
 	private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
@@ -29,19 +31,15 @@ public class Main extends Application {
 		Thread.setDefaultUncaughtExceptionHandler((t, x) -> LOGGER.error(x.getMessage(), x));
 
 		MainController controller = (MainController) SpringFXMLLoader.load(MAINLOCATION);
-		Scene scene = new Scene((Parent) controller.getView(), 1000, 750);
+		//Scene scene = new Scene((Parent) controller.getView(), 300, 750);
 		//primaryStage.setTitle(SpringFXMLLoader.APPLICATION_CONTEXT.getEnvironment().getProperty("application.name"));
-		primaryStage.setScene(scene);
+	
+		JFXDecorator decorator = new JFXDecorator(primaryStage, (Parent) controller.getView());
+		primaryStage.initStyle(StageStyle.UNDECORATED); // TODO
+		
+		primaryStage.setScene(new Scene(decorator));
 		primaryStage.show();
 		controller.setStage(primaryStage);
-		
-
-		/*Parent root = FXMLLoader.load(getClass().getResource(SPLASHLOCATION));
-		Scene scene = new Scene(root);
-
-		stage.setScene(scene);
-		stage.initStyle(StageStyle.UNDECORATED);
-		stage.show();*/
 	}
 
 }
