@@ -1,6 +1,5 @@
 package ru.dz.vita2d.ui.controller;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -17,12 +16,12 @@ import com.jfoenix.controls.JFXRippler;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import ru.dz.vita2d.application.SpringFXMLLoader;
 
 @Component
 public class MainController extends AbstractController {
@@ -115,14 +114,8 @@ public class MainController extends AbstractController {
 	}
 
 	private void initContentArea() {
-		try {
-			contentArea = FXMLLoader.load(getClass().getResource(CONTENTLOCATION));
-		} catch (IOException e) {
-			LOGGER.error(e.getMessage(), e);
-		}
-
+		contentArea = (AnchorPane) SpringFXMLLoader.load(CONTENTLOCATION).getView();
 		root.getChildren().add(contentArea);
-
 	}
 
 	private void initPopup() {
@@ -132,11 +125,7 @@ public class MainController extends AbstractController {
 	}
 
 	private void initSideMenu() {
-		try {
-			stackPane = FXMLLoader.load(getClass().getResource(SIDEMENULOCATION));
-		} catch (IOException e) {
-			LOGGER.error(e.getMessage(), e);
-		}
+		stackPane = (StackPane) SpringFXMLLoader.load(SIDEMENULOCATION).getView();		
 		drawer.setSidePane(stackPane);
 	}
 
