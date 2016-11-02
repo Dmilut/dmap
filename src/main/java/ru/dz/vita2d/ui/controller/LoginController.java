@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import javafx.application.Platform;
@@ -32,9 +33,13 @@ import ru.dz.vita2d.data.IRestCaller;
 import ru.dz.vita2d.data.RestCaller;
 import ru.dz.vita2d.data.ServerCache;
 import ru.dz.vita2d.data.store.LocalFileStorage;
+import ru.dz.vita2d.init.DBInitializer;
 import ru.dz.vita2d.init.StageInitializer;
 import ru.dz.vita2d.maps.MapList;
 import ru.dz.vita2d.media.Player;
+import ru.dz.vita2d.model.User;
+import ru.dz.vita2d.repository.RoleRepository;
+import ru.dz.vita2d.service.UserService;
 import ru.dz.vita2d.ui.LoginFormWindow;
 import ru.dz.vita2d.ui.animation.FadeInLeftTransition;
 import ru.dz.vita2d.ui.animation.FadeInLeftTransition1;
@@ -77,6 +82,11 @@ public class LoginController implements Initializable {
 	private Text labelCompanyName;
 	@FXML
 	private Label labelClose;
+	
+	@Autowired
+	UserService UserService;
+	@Autowired
+	RoleRepository roleRepository;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -93,13 +103,23 @@ public class LoginController implements Initializable {
 				Platform.exit();
 				System.exit(0);
 			});
+			
+			DBInitializer dbInitializer = new DBInitializer();
+			dbInitializer.initDB();
+			
 		});
-		// TODO
+		
 	}
 
 	@FXML
 	private void login(ActionEvent event) {
-		if (textUsername.getText().equals("1") && textPassword.getText().equals("1")) {
+		
+		String name = textUsername.getText();
+		User user = UserService.getUserByName(name);
+		//String password = textPassword.getText();
+		
+		
+		if (user.getPassword().equals(textPassword.getText())) {
 			
 			stageInitializer.initStage(labelClose, STAGELOCATION, STAGETITLE, ISRESIZE, StageStyle.DECORATED,
 					ISMAXIMIZED);

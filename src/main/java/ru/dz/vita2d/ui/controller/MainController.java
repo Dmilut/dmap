@@ -15,24 +15,12 @@ import com.jfoenix.controls.JFXRippler;
 import com.jfoenix.svg.SVGGlyphLoader;
 
 import javafx.application.Platform;
-import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 @Controller
@@ -71,8 +59,7 @@ public class MainController implements Initializable {
 		Platform.runLater(() -> {
 			stage = (Stage) root.getScene().getWindow();
 			stage.setMinWidth(MINWIDTH);
-			stage.setMinHeight(MINHEIGHT);
-		
+			stage.setMinHeight(MINHEIGHT);		
 		});
 
 		// init the title hamburger
@@ -111,7 +98,6 @@ public class MainController implements Initializable {
 		optionsBurger.setOnMouseClicked((handler) -> {
 			toolbarPopup.show(PopupVPosition.TOP, PopupHPosition.RIGHT, -12, 15);
 		});
-
 		
 		// init content Area
 		try {
