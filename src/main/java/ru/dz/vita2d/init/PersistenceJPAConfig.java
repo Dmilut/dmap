@@ -29,17 +29,18 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories("ru.dz.vita2d.repository")
 @Configuration
 public class PersistenceJPAConfig {
-	private static final String PROP_DATABASE_DRIVER = "db.driver";
-	private static final String PROP_DATABASE_PASSWORD = "db.password";
-	private static final String PROP_DATABASE_URL = "db.url";
-	private static final String PROP_DATABASE_USERNAME = "db.username";
-	private static final String PROP_HIBERNATE_DIALECT = "db.hibernate.dialect";
-	private static final String PROP_HIBERNATE_SHOW_SQL = "db.hibernate.show_sql";
-	private static final String PROP_HIBERNATE_FORMAT_SQL = "db.hibernate.format_sql";
-	private static final String PROP_HIBERNATE_USE_COMMENTS = "db.hibernate.use_sql_comments";
+	private static final String PROP_DATABASE_DRIVER = "driver";
+	private static final String PROP_DATABASE_PASSWORD = "password";
+	private static final String PROP_DATABASE_URL = "url";
+	private static final String PROP_DATABASE_USERNAME = "username";
+	private static final String PROP_HIBERNATE_DIALECT = "hibernate.dialect";
+	private static final String PROP_HIBERNATE_SHOW_SQL = "hibernate.show_sql";
+	private static final String PROP_HIBERNATE_FORMAT_SQL = "hibernate.format_sql";
+	private static final String PROP_HIBERNATE_USE_COMMENTS = "hibernate.use_sql_comments";
 	// private static final String PROP_ENTITYMANAGER_PACKAGES_TO_SCAN =
 	// "db.entitymanager.packages.to.scan";
-	private static final String PROP_HIBERNATE_HBM2DDL_AUTO = "db.hibernate.hbm2ddl.auto";
+	private static final String PROP_HIBERNATE_HBM2DDL_AUTO = "hibernate.hbm2ddl.auto";
+	//private static final String PROP_HIBERNATE_HBM2DDL_IMPORT_FILES = "db.hibernate.hbm2ddl.import_files";
 
 	@Resource
 	private Environment env;
@@ -85,6 +86,7 @@ public class PersistenceJPAConfig {
 		properties.put(PROP_HIBERNATE_DIALECT, env.getRequiredProperty(PROP_HIBERNATE_DIALECT));
 		properties.put(PROP_HIBERNATE_SHOW_SQL, env.getRequiredProperty(PROP_HIBERNATE_SHOW_SQL));
 		properties.put(PROP_HIBERNATE_HBM2DDL_AUTO, env.getRequiredProperty(PROP_HIBERNATE_HBM2DDL_AUTO));
+		//properties.put(PROP_HIBERNATE_HBM2DDL_IMPORT_FILES, env.getRequiredProperty(PROP_HIBERNATE_HBM2DDL_IMPORT_FILES));
 		properties.put(PROP_HIBERNATE_FORMAT_SQL, env.getRequiredProperty(PROP_HIBERNATE_FORMAT_SQL));
 		properties.put(PROP_HIBERNATE_USE_COMMENTS, env.getRequiredProperty(PROP_HIBERNATE_USE_COMMENTS));
 
