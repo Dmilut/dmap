@@ -6,7 +6,11 @@ package ru.dz.vita2d.init;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.DependsOn;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import ru.dz.vita2d.model.Role;
@@ -18,14 +22,14 @@ import ru.dz.vita2d.repository.UserRepository;
  * @author dmilut created on Nov 2, 2016
  */
 
+@Component
+@DependsOn({ "persistenceJPAConfig" })
 public class DBInitializer {
 
 	@Autowired
 	private UserRepository userRepository;
 
-	@Autowired
-	private RoleRepository roleRepository;
-
+	@PostConstruct
 	public void initDB() {
 		initUsersAndRoles();
 		test();

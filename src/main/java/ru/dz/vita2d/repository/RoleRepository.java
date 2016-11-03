@@ -9,6 +9,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import ru.dz.vita2d.model.Role;
+import ru.dz.vita2d.model.User;
 
 /**
  * @author dmilut created on Nov 2, 2016
@@ -17,6 +18,6 @@ import ru.dz.vita2d.model.Role;
 @Repository
 public interface RoleRepository extends CrudRepository<Role, Long> {
 
-	//List<Role> finByUser_Id(Long id);
+	List<Role> findByUsers_Id(Long id);
 
 }

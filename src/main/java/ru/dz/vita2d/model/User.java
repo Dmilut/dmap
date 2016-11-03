@@ -40,9 +40,9 @@ public class User implements Serializable {
 	private String password;
 
 	@ManyToMany(targetEntity = Role.class, cascade = { CascadeType.ALL })
-	@JoinTable(name = "user_role", joinColumns = {
-			@JoinColumn(name = "user_id", referencedColumnName = "id") }, inverseJoinColumns = {
-					@JoinColumn(name = "role_id", referencedColumnName = "id") })
+	@JoinTable(name = "users_roles", joinColumns = {
+			@JoinColumn(name = "users_id", referencedColumnName = "id") }, inverseJoinColumns = {
+					@JoinColumn(name = "roles_id", referencedColumnName = "id") })
 	private Set<Role> roles;
 
 	@Column(name = "creation_time", nullable = false)
