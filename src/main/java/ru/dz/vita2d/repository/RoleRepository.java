@@ -14,7 +14,7 @@ import ru.dz.vita2d.model.Role;
  * @author dmilut created on Nov 2, 2016
  */
 
-//@Repository
+@Repository
 public interface RoleRepository extends CrudRepository<Role, Long> {
 
 	//List<Role> finByUser_Id(Long id);
