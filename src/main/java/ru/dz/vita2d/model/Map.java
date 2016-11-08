@@ -26,6 +26,9 @@ public class Map implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	@Column(nullable = false, length = 50)
+	private String name;
+
 	@Lob
 	@Column(length = 100000)
 	private byte[] backgroundImage;
@@ -36,6 +39,14 @@ public class Map implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public byte[] getBackgroundImage() {

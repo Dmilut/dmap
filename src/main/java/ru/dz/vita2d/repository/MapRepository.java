@@ -3,7 +3,7 @@
  */
 package ru.dz.vita2d.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import ru.dz.vita2d.model.Map;
@@ -13,6 +13,8 @@ import ru.dz.vita2d.model.Map;
  */
 
 @Repository
-public interface MapRepository extends JpaRepository<Map, Long> {
+public interface MapRepository extends CrudRepository<Map, Long> {
+
+	Map findByName(String name);
 
 }
