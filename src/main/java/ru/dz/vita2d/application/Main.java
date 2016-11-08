@@ -20,9 +20,9 @@ public class Main extends Application {
 	public static void main(String[] args) throws Exception {
 		try {
 			launch(args);
-		} catch (Exception x) {
-			LOGGER.error(x.getMessage(), x);
-			throw x;
+		} catch (Exception e) {
+			LOGGER.error(e.getMessage(), e);
+			throw e;
 		}
 	}
 
