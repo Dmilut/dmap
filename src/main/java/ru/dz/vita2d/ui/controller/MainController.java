@@ -16,9 +16,11 @@ import com.jfoenix.controls.JFXRippler;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import ru.dz.vita2d.application.SpringFXMLLoader;
@@ -43,7 +45,9 @@ public class MainController extends AbstractController {
 	@FXML
 	private AnchorPane root;
 	@FXML
-	private StackPane menu;
+	private BorderPane menu;
+	@FXML
+	private BorderPane drawerContainer;
 	@FXML
 	private StackPane titleBurgerContainer;
 	@FXML
@@ -77,14 +81,18 @@ public class MainController extends AbstractController {
 		initPopup();
 		initContentArea();
 
+		drawerContainer.setMouseTransparent(true);
+
 		drawer.setOnDrawerOpening((handler) -> {
 			titleBurger.getAnimation().setRate(1);
 			titleBurger.getAnimation().play();
+			drawerContainer.setMouseTransparent(false);
 		});
 
 		drawer.setOnDrawerClosing((handler) -> {
 			titleBurger.getAnimation().setRate(-1);
 			titleBurger.getAnimation().play();
+			drawerContainer.setMouseTransparent(true);			
 		});
 
 		titleBurgerContainer.setOnMouseClicked((handler) -> {
@@ -125,7 +133,7 @@ public class MainController extends AbstractController {
 	}
 
 	private void initSideMenu() {
-		stackPane = (StackPane) SpringFXMLLoader.load(SIDEMENULOCATION).getView();		
+		stackPane = (StackPane) SpringFXMLLoader.load(SIDEMENULOCATION).getView();
 		drawer.setSidePane(stackPane);
 	}
 
